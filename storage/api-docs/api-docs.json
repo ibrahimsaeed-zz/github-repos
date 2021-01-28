@@ -1,0 +1,69 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Github Search repositories",
+        "description": "simple service searching in github repositories",
+        "contact": {
+            "name": "ibrahimsaeed",
+            "url": "https://www.linkedin.com/in/developer-ibrahim-saeed/",
+            "email": "c.ibrahimsaeed@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/search": {
+            "post": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Find repositories via various criteria.",
+                "operationId": "App\\Http\\Controllers\\Api\\HomeController::index",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Results per page (max 100)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "default": "10"
+                        }
+                    },
+                    {
+                        "name": "created_at",
+                        "in": "query",
+                        "description": "created from this date",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date",
+                            "default": "2020-01-01"
+                        }
+                    },
+                    {
+                        "name": "langauge",
+                        "in": "query",
+                        "description": "for example : Python , Go , PHP",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "PHP"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "object"
+                    },
+                    "503": {
+                        "description": "ServiceUnavailableException"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
