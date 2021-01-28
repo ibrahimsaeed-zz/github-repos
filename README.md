@@ -34,5 +34,4 @@ Optional parameters
 - `langauge`
 
 
-Checkout screenshots on path ~/github-repos/public/screens  .
-```
+Checkout screenshots on path public/screens
